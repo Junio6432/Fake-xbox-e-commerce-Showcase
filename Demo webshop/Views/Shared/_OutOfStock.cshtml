@@ -1,0 +1,13 @@
+﻿<link href="~/css/Products.css" rel="stylesheet" />
+
+@model Product
+
+
+            <img src="@Model.ImageThumbnailUrl" alt="@Model.Name" width="253" height="327" class="outOfStock">
+            <div>
+                
+                <h4 class="price-OutOfStock">
+                    @Model.Price.ToString("c")
+                </h4>
+
+            </div>

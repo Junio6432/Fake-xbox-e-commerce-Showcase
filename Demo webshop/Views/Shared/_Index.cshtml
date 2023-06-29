@@ -1,0 +1,98 @@
+﻿@model HomeViewModel
+
+<div id="mainPage">
+    <h1 class="title">Games of the week</h1>
+
+    <main>
+        @foreach (var game in Model.AllGames)
+        {
+            if (game.IsGameOfTheWeek && game.InStock)
+            {
+
+                <div class="card">
+
+                    <div class="card-inner">
+
+                        <div class="card-front">
+
+
+                            <partial name="_GameCard" model="game" />
+
+
+                        </div>
+
+                        <div class="card-back">
+
+                            <partial name="_BackCardGame" model="game" />
+
+                        </div>
+                    </div>
+
+                    <partial name="_GameDetails" model="game" />
+
+                </div>
+
+            }
+
+        }
+    </main>
+
+    <h1 class="title">All Games</h1>
+
+    <games>
+        @foreach (var game in Model.AllGames)
+        {
+
+            if (game.IsGameOfTheWeek == false && game.InStock == true)
+            {
+
+                <div class="card">
+
+                    <div class="card-inner">
+
+                        <div class="card-front">
+
+
+                            <partial name="_GameCard" model="game" />
+
+
+                        </div>
+
+                        <div class="card-back">
+
+                            <partial name="_BackCardGame" model="game" />
+
+                        </div>
+                    </div>
+                    <partial name="_GameDetails" model="game" />
+                </div>
+
+            }
+
+            if (game.InStock == false)
+            {
+                <div>
+
+                    <div>
+
+                        <div>
+
+
+                            <partial name="_OutOfStock" model="game" />
+
+
+                        </div>
+
+
+
+                    </div>
+
+                    <partial name="_GameDetails" model="game" />
+                    <span id="OutOfStockMessage">OUT OF STOCK!</span>
+                </div>
+
+            }
+        }
+    </games>
+</div>
+

@@ -1,0 +1,34 @@
+﻿<link href="~/css/ProductDetails.css" rel="stylesheet" />
+<link href="~/css/Products.css" rel="stylesheet" />
+
+@model Product
+
+<div class="productDetails">
+
+    <img alt="@Model.Name" src="@Model.ImageUrl width="400" height="516"/>
+    <div class="description">
+        <h1>
+            @Model.Name
+        </h1>
+        <h3>@Model.ShortDescription</h3>
+        <p>@Model.LongDescription</p>
+        <h3>@Model.Genre</h3>
+        <h3>Release Date: @Model.ReleaseDate.ToShortDateString()</h3>
+        <h3>@Model.ESRB</h3>
+        <h3>@Model.Price.ToString("c")</h3>
+        @if(Model.InStock == true)
+        {
+            <div>
+                <a id="AddToCartLink" data-product-id="@Model.ProductId">
+                    <img class="Shopping-cart-Details" src="/Images/—Pngtree—vector green shopping cart fight_5411954.png">
+                    <h3 class="btn-custom" id="AddToCart-Details">+Add to Cart</h3>
+                </a>
+            </div>
+        }
+        else
+        {
+            <span id="OutOfStockMessage">OUT OF STOCK!</span>
+        }
+
+    </div>
+</div>

@@ -1,0 +1,64 @@
+﻿<link href="~/css/Order.css" rel="stylesheet" />
+
+@model Order
+
+<div>
+    <div class="container">
+        <p class="CheckOut-Title">Please, enter your shipping details.</p>
+        <hr />
+        <form asp-action="CheckOut" method="post" role="form" class="form">
+
+            <div asp-validation-summary="All" class="Checkout-Validation"></div>
+
+            <div class="fields fields--2">
+                <label class="field">
+                    <span class="field__label" for="firstname">First name</span>
+                    <input asp-for="FirstName" class="field__input" />
+                </label>
+                <label class="field">
+                    <span class="field__label" for="lastname">Last name</span>
+                    <input asp-for="LastName" class="field__input" />
+                </label>
+            </div>
+            <label class="field">
+                <span class="field__label" for="address">Address</span>
+                <input asp-for="AddressLine1" class="field__input" />
+            </label>
+            <label class="field">
+                <span class="field__label" for="address">Address 2</span>
+                <input asp-for="AddressLine2" class="field__input" />
+            </label>
+            <div class="fields fields--3">
+                <label class="field">
+                    <span class="field__label" for="zipcode">Zip code</span>
+                    <input asp-for="ZipCode" class="field__input" />
+                </label>
+                <label class="field">
+                    <span class="field__label" for="city">City</span>
+                    <input asp-for="City" class="field__input" />
+                </label>
+                <label class="field">
+                    <span class="field__label" for="state">State</span>
+                    <input asp-for="State" class="field__input" />
+                </label>
+                <label class="field">
+                    <span class="field__label" for="country">Country</span>
+                    <input asp-for="Country" class="field__input" />
+                </label>
+                <label class="field">
+                    <span class="field__label" for="country">Email</span>
+                    <input asp-for="Email" class="field__input" />
+                </label>
+                <label class="field">
+                    <span class="field__label" for="country">Phone Number</span>
+                    <input asp-for="PhoneNumber" class="field__input" />
+                </label>
+            
+            </div>
+            <hr>
+            <input class="button" type="submit" name="submit" value="Complete order" />
+        </form>
+        
+    
+    </div>
+</div>

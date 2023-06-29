@@ -1,0 +1,82 @@
+﻿
+
+@model ShoppingCartViewModel
+
+
+    <h3 class="ShoppingCart-Title">
+        Shopping cart
+    </h3>
+    <div class="ClearShoppingCartFlex">
+
+        <h3 class="ClearColor">Clear Shopping Cart</h3>
+
+        <a id="CleanAll">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 576 512">
+                <!--! Font Awesome Pro 6.4.0 by fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                <path d="M566.6 54.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192-34.7-34.7c-4.2-4.2-10-6.6-16-6.6c-12.5 0-22.6 10.1-22.6 22.6v29.1L364.3 320h29.1c12.5 0 22.6-10.1 22.6-22.6c0-6-2.4-11.8-6.6-16l-34.7-34.7 192-192zM341.1 353.4L222.6 234.9c-42.7-3.7-85.2 11.7-115.8 42.3l-8 8C76.5 307.5 64 337.7 64 369.2c0 6.8 7.1 11.2 13.2 8.2l51.1-25.5c5-2.5 9.5 4.1 5.4 7.9L7.3 473.4C2.7 477.6 0 483.6 0 489.9C0 502.1 9.9 512 22.1 512l173.3 0c38.8 0 75.9-15.4 103.4-42.8c30.6-30.6 45.9-73.1 42.3-115.8z" />
+            </svg>
+        </a>
+
+    
+
+    </div>
+    @if (Model.ShoppingCartTotal > 0)
+        {
+            <div class="ShoppingCart-Flex">
+                <div class="ShoppingCart-Products">
+                    @foreach (var line in Model.ShoppingCart.ShoppingCartItems)
+                    {
+                        <div>
+                            <div class="ProductsCard">
+                                <div>
+                                    <a class="name" asp-controller="Products" asp-action="Details" asp-route-id="@line.product.ProductId">
+                                        <img src="@line.product.ImageThumbnailUrl" alt="@line.product.Name">
+                                    </a>
+                                </div>
+                               
+                                <div class="ShoppingCart-Details">
+                                    <h3>@line.Amount x @line.product.Name</h3>
+                                    <div>
+                                        <h4>@line.product.ShortDescription</h4>
+                                        <h2>@line.product.Price.ToString("c")</h2>
+                                    </div>
+                                    <a id="RemoveProduct" data-product-id="@line.product.ProductId">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="red" viewBox="0 0 16 16">
+                                            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+                                            <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+                                        </svg>
+                                    </a>
+                                    <a id="AddAnotherProduct" data-product-id="@line.product.ProductId">
+                                        <svg style="color: rgb(33, 196, 29);" xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 16 16">
+                                            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" fill="#21c41d"></path>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+
+                <div class="ShoppingCart-Checkout CheckOutCard">
+                    <div class="ShoppingCart-Total">
+                        <h1>Total:</h1>
+                        <h1>@Model.ShoppingCartTotal.ToString("c")</h1>
+                    </div>
+                    <hr />
+                    <div>
+                        <a class="ShoppingCart-link" asp-controller="Order" asp-action="CheckOut"><h4>Check out now!</h4></a>
+                    </div>
+                </div>
+
+            </div>
+        }
+        else
+        {
+            <div class="ShoppingCart-Checkout">
+                <div class="ShoppingCart-Total">
+                    <h1>The Cart is empty!</h1>
+                </div>
+            </div>
+        }
+
+    

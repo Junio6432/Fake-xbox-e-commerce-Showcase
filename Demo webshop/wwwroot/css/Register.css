@@ -1,0 +1,20 @@
+﻿.button {
+    background-color: #21c41d;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: block;
+    color: #fff;
+    width: 24%;
+    padding: 1rem;
+    border: 0;
+    cursor: pointer;
+    outline: 0;
+    margin-left: 34%;
+    margin-top: -2%;
+    margin-bottom: 1%;
+}
+
+.Form {
+    padding-bottom: 2%;
+}

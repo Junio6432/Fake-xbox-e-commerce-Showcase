@@ -1,0 +1,57 @@
+main {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-auto-rows: 29em;
+    grid-gap: 12em;
+    grid-column-gap: 5em;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+games {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-auto-rows: 30em;
+    grid-gap: 2em;
+    grid-column-gap: 5em;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+searchedProducts {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-auto-rows: 30em;
+    grid-gap: 2em;
+    grid-column-gap: 5em;
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-top: 10%;
+}
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

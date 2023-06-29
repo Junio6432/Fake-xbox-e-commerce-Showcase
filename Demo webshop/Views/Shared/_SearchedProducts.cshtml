@@ -1,0 +1,62 @@
+﻿<link href="~/css/Products.css" rel="stylesheet" />
+
+@model List<Product>
+
+<searchedProducts>
+    @foreach (var game in Model)
+    {
+
+        @if (game.InStock == false)
+        {
+            <div>
+
+                <div>
+
+                    <div>
+
+
+                        <partial name="_OutOfStock" model="game" />
+
+
+                    </div>
+
+
+
+                </div>
+
+                <partial name="_GameDetails" model="game" />
+                <span id="OutOfStockMessage">OUT OF STOCK!</span>
+            </div>
+        }
+        else
+        {
+            
+            <div class="card">
+
+                <div class="card-inner">
+
+                    <div class="card-front">
+
+
+                        <partial name="_GameCard" model="game" />
+
+
+                    </div>
+
+                    <div class="card-back">
+
+                        <partial name="_BackCardGame" model="game" />
+
+                    </div>
+                </div>
+
+                <partial name="_GameDetails" model="game" />
+
+            </div>
+
+        }
+
+            
+
+    }
+</searchedProducts>

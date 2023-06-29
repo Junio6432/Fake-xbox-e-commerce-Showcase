@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Fake Xbox Web Shop">
+    <meta name="keywords" content="HTML, CSS, JavaScript, Asp.net, Xbox, Games">
+    <meta name="author" content="Junior Collado">
+    <meta name="viewport" content="width = decive-width" />
+    <title>Fake Xbox Web Shop</title>
+    <link rel="stylesheet" href="~/css/Xbox.css">
+    <link rel="stylesheet" href="~/css/grid.css">
+    <link rel="icon" type="image/x-icon" href="~/Images/xbox-logo-cover.jpg">
+    <script src="~/lib/bootstrap/js/bootstrap.js"></script>
+    <link href="~/css/site.css" rel="stylesheet" />
+    <link href="~/css/Nav.css" rel="stylesheet" />
+    <script src="~/lib/jquery/jquery.js"></script>
+    <script src="~/lib/jquery-validate/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+    <script src="~/js/script.js"></script>
+
+</head>
+<body>
+    <div>
+        <header>
+            <nav>
+                <div class="logo">
+                    <a asp-controller="Home" asp-action="Index">
+                        <img src="/images/WhatsApp Image 2022-10-03 at 8.15.30 PM.jpeg"
+                             alt="Xbox's' Logo">
+                    </a>
+
+                    <div class="navbar">
+                        <ul>
+                            <li>
+                                <a asp-controller="Contact" asp-action="Index">Contact</a>
+                            </li>
+                            <li>
+                                    <div class="box">
+                                        <form name="search" class="searchForm">
+                                            <input id="txtProductName" type="text" class="input" onmouseout="this.value = ''; this.blur();"/>
+                                            <span>
+                                                <svg  xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                                </svg>
+                                            </span>
+                                        </form>                                 
+                                    </div>
+                            </li>
+                        </ul>      
+                        <div class="rightSideNavbar">
+                            <span id="ShoppingCartComponent">@await Component.InvokeAsync("ShoppingCartSummary")
+                            </span>
+                            <partial name="_loginPartial" />
+                        </div>
+                                             
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <content>
+            @RenderBody()
+        </content>
+        
+        @RenderSection("Scripts", required: false)
+    </div>
+</body>
+</html>

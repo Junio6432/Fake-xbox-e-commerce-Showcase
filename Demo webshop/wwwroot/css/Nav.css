@@ -1,0 +1,121 @@
+﻿.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 96vw;
+    background-color: green;
+    padding-right: 1.5em;
+    margin: 0px;
+    margin-left: -9px;
+    height: 110px;
+    border-radius: 4em;
+}
+
+.navbar > ul {
+    list-style: none;
+}
+
+.navbar > ul > li {
+    padding-bottom: 6%;
+}
+
+.navbar > ul > li > a{
+    text-decoration:none;
+    color: white;
+    font-size: 25px;
+}
+
+.navbar > ul > li:hover > a{
+    color: goldenrod;
+    font-size: 29px;
+}
+
+/*LefSide*/
+.box {
+    position: relative;
+}
+
+.input {
+    padding: 10px;
+    width: 65px;
+    height: 65px;
+    background-color: #3b3640;
+    border: 4px solid #21c41d;
+    border-radius: 50px;
+    box-sizing: border-box;
+    font-family: Comic Sans MS;
+    font-size: 26px;
+    color: #21c41d;
+    outline: none;
+    transition: 0.5s;
+}
+
+.box:hover input {
+    width: 75%;
+    background: #3b3640;
+    border-radius: 10px;
+}
+
+.box svg {
+    position: absolute;
+    top: 50%;
+    transform: translate(-204%,-50%);
+    font-size: 26px;
+    color: #21c41d;
+    transition: 0.0s;
+}
+
+.box:hover svg {
+    opacity: 0;
+    z-index: -1;
+}
+
+
+.searchForm {
+    margin-top: -6%;
+}
+
+/*RightSide*/
+.rightSideNavbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+    color: black
+}
+
+    .rightSideNavbar > ul {
+        list-style: none;
+    }
+
+.text-dark {
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+}
+
+    .text-dark:hover {
+        font-size: 29px;
+        color: goldenrod
+    }
+
+.Shopping-cart-Layout {
+    list-style: none;
+}
+
+.Shopping-cart-svg {
+    color: white
+}
+
+    .Shopping-cart-svg:hover {
+        color: goldenrod;
+        width: 51px;
+        height: 51px;
+    }
+
+.quantity {
+    color: white;
+    font-size: 47px;
+    margin-right: 52%;
+    transition: opacity 0.3s ease;
+}

@@ -1,0 +1,29 @@
+﻿<link href="~/css/Products.css" rel="stylesheet" />
+
+@model Product
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> SignInManager
+
+@{
+    var isUserSignedIn = User?.Identity?.IsAuthenticated;
+    var isUserInRole = User?.IsInRole("manager");
+}
+
+
+@if (isUserSignedIn == true && isUserInRole == true)
+{
+    
+    <a id="DeleteGame"  data-product-id="@Model.ProductId">
+        <img class="DeleteProduct" src="/Images/delete.png">
+        <h3 class="RedBtn-custom">Delete Product</h3>
+    </a>
+
+}
+else{
+
+    <a id="AddToCartLink"  data-product-id="@Model.ProductId">
+        <img class="Shopping-cart" src="/Images/—Pngtree—vector green shopping cart fight_5411954.png">
+        <h3 class="GreenBtn-custom">+Add to Cart</h3>
+    </a>
+}
+    

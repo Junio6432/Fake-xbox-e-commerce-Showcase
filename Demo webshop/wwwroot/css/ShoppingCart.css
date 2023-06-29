@@ -1,0 +1,75 @@
+﻿.ShoppingCart-Title {
+    color: white;
+    font-size: 40px;
+    font-family: 'Comic Sans MS';
+    color: #21c41d;
+}
+
+.ShoppingCart-Details {
+    color: white;
+}
+
+.ShoppingCart-Total{
+    color:chartreuse;
+}
+
+.ShoppingCart-link{
+    text-decoration:none;
+    color:white;
+    font-size:40px;
+}
+
+.ShoppingCart-link:hover{
+    font-size: 49px;
+    color:goldenrod;
+}
+
+.ShoppingCart-Flex{
+    display:flex;
+    flex-direction:row
+}
+
+#RemoveProduct{
+    cursor:pointer
+}
+
+#AddAnotherProduct {
+    cursor: pointer
+}
+
+#CleanAll {
+    cursor: pointer;
+    color: yellow;
+    margin-left: 2%;
+    margin-bottom: 2%;
+    margin-top: 2%;
+}
+
+.ProductsCard {
+    background-color: black;
+    border-radius: 50px;
+    width: 92%;
+    height: 45%;
+    margin-bottom: 3%;
+    padding: 3%;
+    box-shadow: 0px 0px 80px 3px rgba(33,196,29,1);
+}
+
+.CheckOutCard{
+background-color: black;
+border-radius: 50px;
+height: 46%;
+margin-bottom: 3%;
+padding: 2%;
+box-shadow: 0px 0px 80px 3px rgba(33,196,29,1);
+margin-left: 7%;
+}
+
+.ClearColor {
+    color: white;
+    font-size: 26px;
+}
+
+.ClearShoppingCartFlex{
+    display:flex;
+}
